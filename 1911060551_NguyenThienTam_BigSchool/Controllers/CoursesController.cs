@@ -93,8 +93,7 @@ namespace _1911060551_NguyenThienTam_BigSchool.Controllers
                 Category = course.CategoryId,
                 Place = course.Place
             };
-            return View("Create", viewModel);
-        }
+            return View("Create", viewModel);//
 
 
     }
