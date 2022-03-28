@@ -1,4 +1,4 @@
-﻿
+﻿@model  IEnumerable<_1911060551_NguyenThienTam_BigSchool.Models.Course>
 @{
     ViewBag.Title = "Mine";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -6,7 +6,7 @@
 
 <h2>Mine</h2>
 <ul class="course">
-    @foreach (var course in Model)
+    @foreach (var course in Model )
             {
                 <li>
                     <div class="date">
@@ -32,7 +32,9 @@
 
                     </div>
                     <div class="action">
-                        <a href="">Edit </a>
+                        <a href="@Url.Action("Edit", "Course", new { id = course.Id })">Edit</a> 
+
+                        
                         <a href="">Delete</a>
 
                     </div>

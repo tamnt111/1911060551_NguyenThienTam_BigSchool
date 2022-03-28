@@ -79,6 +79,22 @@ namespace _1911060551_NguyenThienTam_BigSchool.Controllers
                 .ToList();
             return View(courses);
         } 
+        [Authorize]
+        public ActionResult Edit(int id)
+        {
+            var userId = User.Identity.GetUserId();
+            var course = _dbContext.Courses.Single(c => c.Id == id && c.LecturerId == userId);
+
+            var viewModel = new CourseViewModel
+            {
+                Categories = _dbContext.Categories.ToList(),
+                Date = course.DateTime.ToString("dd/M/yyyy"),
+                Time = course.DateTime.ToString("HH:mm"),
+                Category = course.CategoryId,
+                Place = course.Place
+            };
+            return View("Create", viewModel);
+        }
 
 
     }

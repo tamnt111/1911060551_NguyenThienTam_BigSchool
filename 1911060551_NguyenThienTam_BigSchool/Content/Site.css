@@ -48,7 +48,7 @@ textarea {
     left: 70px;
 }
 /* Mine*/
-.course > li . action{
+.course > li .action{
     display:none;
     left:70px;
     position: absolute;
